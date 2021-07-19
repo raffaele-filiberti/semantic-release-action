@@ -13,7 +13,7 @@ module.exports = async extras => {
 
   const _extras = extras.replace(/['"]/g, '').replace(/[\n\r]/g, ' ');
 
-  const { stdout, stderr } = await exec(`npm install ${_extras} --silent`, {
+  const { stdout, stderr } = await exec(`npm install ${_extras}`, {
     cwd: path.resolve(__dirname, '..')
   });
   core.debug(stdout);
